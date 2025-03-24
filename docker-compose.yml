@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  api:
+    build: ./MiddleTire
+    ports:
+      - "8080:8080"
+    depends_on:
+      - database
+
+  database:
+    image: mariadb:11.2
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: calculations
+      MYSQL_USER: user
+      MYSQL_PASSWORD: pass
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+
+  frontend:
+    build: ./Frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - api
+
+  testcafe:
+    image: testcafe/testcafe
+    volumes:
+      - ./Frontend/tests:/tests
+    working_dir: /tests
+    command: "chromium e2e_test.js"
+    depends_on:
+      - frontend
+
+  k6:
+    image: grafana/k6
+    volumes:
+      - ./tests:/scripts
+    working_dir: /scripts
+    command: run spike_test.js
+    depends_on:
+      - api
+
+volumes:
+  db_data:
