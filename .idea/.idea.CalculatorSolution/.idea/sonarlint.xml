@@ -2,7 +2,7 @@
 <project version="4">
   <component name="SonarLintProjectSettings">
     <option name="bindingEnabled" value="true" />
-    <option name="projectKey" value="sqp_4383711841f30923b247554d8e82c4269e9bc206" />
-    <option name="serverId" value="EASV" />
+    <option name="projectKey" value="The-EASV-Way" />
+    <option name="serverId" value="EASV-WAY" />
   </component>
 </project>

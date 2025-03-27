@@ -1,12 +1,17 @@
 version: '3.8'
 
 services:
-  api:
-    build: ./MiddleTire
+  sonarqube:
+    image: sonarqube:lts
+    container_name: sonarqube
     ports:
-      - "8080:8080"
-    depends_on:
-      - database
+      - "9000:9000"
+    environment:
+      - SONAR_ES_BOOTSTRAP_CHECKS_DISABLE=true
+    volumes:
+      - sonarqube_data:/opt/sonarqube/data
+      - sonarqube_extensions:/opt/sonarqube/extensions
+      - sonarqube_logs:/opt/sonarqube/logs
 
   database:
     image: mariadb:11.2
@@ -20,17 +25,26 @@ services:
     volumes:
       - db_data:/var/lib/mysql
 
+  api:
+    build: ./MiddleTire
+    ports:
+      - "8080:8080"
+    depends_on:
+      - database
+      - sonarqube
+
   frontend:
     build: ./Frontend
     ports:
       - "3000:80"
     depends_on:
       - api
+      - sonarqube
 
   testcafe:
     image: testcafe/testcafe
     volumes:
-      - ./tests/e2e:/tests
+      - ./Frontend/tests:/tests
     working_dir: /tests
     command: "chromium e2e_test.js"
     depends_on:
@@ -39,11 +53,14 @@ services:
   k6:
     image: grafana/k6
     volumes:
-      - ./tests/load:/scripts
+      - ./tests:/scripts
     working_dir: /scripts
-    command: run loadtest.js
+    command: run spike_test.js
     depends_on:
       - api
 
 volumes:
   db_data:
+  sonarqube_data:
+  sonarqube_extensions:
+  sonarqube_logs:
