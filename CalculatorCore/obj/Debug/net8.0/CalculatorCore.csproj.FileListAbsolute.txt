@@ -1,0 +1,12 @@
+C:\Users\ibrah\OneDrive\Skrivebord\CalculatorSolution (5)\CalculatorSolution\CalculatorCore\obj\Debug\net8.0\CalculatorCore.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ibrah\OneDrive\Skrivebord\CalculatorSolution (5)\CalculatorSolution\CalculatorCore\obj\Debug\net8.0\CalculatorCore.AssemblyInfoInputs.cache
+C:\Users\ibrah\OneDrive\Skrivebord\CalculatorSolution (5)\CalculatorSolution\CalculatorCore\obj\Debug\net8.0\CalculatorCore.AssemblyInfo.cs
+C:\Users\ibrah\OneDrive\Skrivebord\CalculatorSolution (5)\CalculatorSolution\CalculatorCore\obj\Debug\net8.0\CalculatorCore.csproj.CoreCompileInputs.cache
+C:\Users\ibrah\OneDrive\Skrivebord\CalculatorSolution (5)\CalculatorSolution\CalculatorCore\obj\Debug\net8.0\CalculatorCore.sourcelink.json
+C:\Users\ibrah\OneDrive\Skrivebord\CalculatorSolution (5)\CalculatorSolution\CalculatorCore\bin\Debug\net8.0\CalculatorCore.deps.json
+C:\Users\ibrah\OneDrive\Skrivebord\CalculatorSolution (5)\CalculatorSolution\CalculatorCore\bin\Debug\net8.0\CalculatorCore.dll
+C:\Users\ibrah\OneDrive\Skrivebord\CalculatorSolution (5)\CalculatorSolution\CalculatorCore\bin\Debug\net8.0\CalculatorCore.pdb
+C:\Users\ibrah\OneDrive\Skrivebord\CalculatorSolution (5)\CalculatorSolution\CalculatorCore\obj\Debug\net8.0\CalculatorCore.dll
+C:\Users\ibrah\OneDrive\Skrivebord\CalculatorSolution (5)\CalculatorSolution\CalculatorCore\obj\Debug\net8.0\refint\CalculatorCore.dll
+C:\Users\ibrah\OneDrive\Skrivebord\CalculatorSolution (5)\CalculatorSolution\CalculatorCore\obj\Debug\net8.0\CalculatorCore.pdb
+C:\Users\ibrah\OneDrive\Skrivebord\CalculatorSolution (5)\CalculatorSolution\CalculatorCore\obj\Debug\net8.0\ref\CalculatorCore.dll
