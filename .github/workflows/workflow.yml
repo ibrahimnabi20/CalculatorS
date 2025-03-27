@@ -36,11 +36,17 @@ jobs:
 
       - name: Run unit tests with coverage
         run: |
-          dotnet test --no-build --configuration Release --collect:"XPlat Code Coverage" --results-directory TestResults
+          dotnet test CalculatorTests/CalculatorTests.csproj \
+            --no-build --configuration Release \
+            --collect:"XPlat Code Coverage" \
+            --results-directory TestResults
 
       - name: Generate code coverage report
         run: |
-          reportgenerator -reports:"TestResults/**/coverage.cobertura.xml" -targetdir:coverage-report -reporttypes:SonarQube
+          reportgenerator \
+            -reports:"TestResults/**/coverage.cobertura.xml" \
+            -targetdir:coverage-report \
+            -reporttypes:SonarQube
 
       - name: Start Static Code Analysis
         run: |

@@ -12,6 +12,9 @@ public class CachedCalculator : ICalculator
         string key = $"{a}{op}{b}";
         if (!_cache.ContainsKey(key))
             _cache[key] = computation();
+        
+        return _cache[key];
+    }
 
     public int Add(int a, int b) => FetchOrCompute(a, b, "+", () => _calculator.Add(a, b));
     public int Subtract(int a, int b) => FetchOrCompute(a, b, "-", () => _calculator.Subtract(a, b));
